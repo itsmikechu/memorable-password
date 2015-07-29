@@ -2,11 +2,16 @@ import 'bootstrap';
 import 'bootstrap/css/bootstrap.css!';
 
 export class App {
-  configureRouter(config, router){
-    config.title = 'Aurelia';
-    config.map([
-      { route: ['','welcome'], name: 'welcome',      moduleId: './welcome',      nav: true, title:'Welcome' },
-    ]);
+  configureRouter(config, router) {
+    config.title = 'Memorable Password';
+
+    config.map([{
+      route: ['', 'create'],
+      name: 'create',
+      moduleId: './create',
+      nav: true,
+      title: 'Create'
+    }, ]);
 
     this.router = router;
   }

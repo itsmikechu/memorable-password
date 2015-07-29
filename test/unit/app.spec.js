@@ -10,8 +10,7 @@ class RouterStub {
 }
 
 describe('the App module', () => {
-  var sut
-    , mockedRouter;
+  var sut, mockedRouter;
 
   beforeEach(() => {
     mockedRouter = new RouterStub();
@@ -24,10 +23,16 @@ describe('the App module', () => {
   });
 
   it('configures the router title', () => {
-    expect(sut.router.title).toEqual('Aurelia');
+    expect(sut.router.title).toEqual('Memorable Password');
   });
 
-  it('should have a welcome route', () => {
-    expect(sut.router.routes).toContain({ route: ['','welcome'], name: 'welcome',  moduleId: './welcome', nav: true, title:'Welcome' });
+  it('should have a create route', () => {
+    expect(sut.router.routes).toContain({
+      route: ['', 'create'],
+      name: 'create',
+      moduleId: './create',
+      nav: true,
+      title: 'Create'
+    });
   });
 });
