@@ -1,22 +1,23 @@
 {
-  "name": "aurelia-skeleton-navigation",
-  "version": "0.15.1",
-  "description": "A starter kit for building a standard navigation-style app with Aurelia.",
+  "name": "memorable-password",
+  "version": "0.0.1",
+  "description": "Create stronger passwords that are memorable.",
   "keywords": [
-    "aurelia",
-    "navigation",
-    "skeleton"
+    "password",
+    "generator",
+    "website",
+    "memorable"
   ],
-  "homepage": "http://aurelia.io",
+  "homepage": "https://memorablepassword.com",
   "bugs": {
-    "url": "https://github.com/aurelia/skeleton-navigation/issues"
+    "url": "https://github.com/sevhn/memorable-password/issues"
   },
   "license": "MIT",
-  "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
+  "author": "Mike Chu <mike@chu.ms>",
   "main": "dist/commonjs/index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/aurelia/skeleton-navigation"
+    "url": "https://github.com/sevhn/memorable-password"
   },
   "devDependencies": {
     "aurelia-tools": "^0.1.3",

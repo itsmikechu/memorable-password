@@ -33,9 +33,4 @@ describe('aurelia skeleton app', function() {
   it('should show alert message when clicking submit button', () => {
     expect(po_welcome.openAlertDialog()).toBe(true);
   });
-
-  it('should navigate to flickr page', () => {
-    po_skeleton.navigateTo('#/flickr');
-    expect(po_skeleton.getCurrentPageTitle()).toBe('Flickr | Aurelia');
-  });
 });
