@@ -19,7 +19,18 @@ describe('the Create module', () => {
     expect(sut.passphrase).toBeDefined();
   });
 
-  it('an initially defined passphrase', () => {
+  it('has an initially defined passphrase', () => {
     expect(sut.passphrase).toEqual('Start out with 1-2 sentences. Make them proper, personal, and memorable!');
-  })
+  });
+
+  it('has a function to convert a passphrase to password', () => {
+    expect(sut.password).toBeDefined();
+  });
+
+  it('produces a shorter password than passphrase', () => {
+    var passphraseLength = sut.passphrase.length;
+    var passwordLength = sut.password.length;
+    expect(passphraseLength).toBeGreaterThan(passwordLength);
+  });
+
 });
