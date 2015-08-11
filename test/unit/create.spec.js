@@ -32,5 +32,4 @@ describe('the Create module', () => {
     var passwordLength = sut.password.length;
     expect(passphraseLength).toBeGreaterThan(passwordLength);
   });
-
 });
