@@ -11,6 +11,7 @@ Create a stronger memorable password.
     - karma+jasmine
     - yeoman
     - git(hub)?
+    - flexbox
     - markdown
     - vi
 
