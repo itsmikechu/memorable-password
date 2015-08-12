@@ -51,4 +51,11 @@ describe('the Create module', () => {
     let resultantPasswords = examplePassphrases.map(sut.convertPassphraseToPassword);
     expect(resultantPasswords).toEqual(expectedPasswords);
   });
+
+  it('produces an expected password when calling the password getter', () => {
+    sut.passphrase = examplePassphrases[0];
+    let resultantPassword = sut.password;
+
+    expect(resultantPassword).toEqual(expectedPasswords[0]);
+  });
 });

@@ -8,7 +8,7 @@ export class Create {
   }
 
   get password() {
-    return createPassword(this.passphrase);
+    return this.convertPassphraseToPassword(this.passphrase);
   }
 
   convertPassphraseToPassword(phrase) {
