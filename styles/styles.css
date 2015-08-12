@@ -15,12 +15,20 @@ section {
   justify-content: center;
   align-items: center;
 }
-section > h2 {
+.logo-large {
+  background-image: url(../#logo);
+}
+.subheading {
   font-size: 2em;
 }
-section > span {
+.text-input {
   min-width: 10vw;
+  max-width: 90vw;
   text-align: center;
   padding: 2px;
   border: 1px solid black;
+  font-size: 1.1em;
+}
+.text-output {
+  font-size: 1.7em;
 }

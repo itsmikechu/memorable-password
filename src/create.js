@@ -1,9 +1,9 @@
 export class Create {
-  heading;
+  subheading;
   passphrase;
 
   constructor() {
-    this.heading = 'Create a stronger, memorable password.';
+    this.subheading = 'Create a stronger, memorable password.';
     this.passphrase = 'Clear this text, then type 1-2 memorable sentences with proper grammar and punctuation.';
   }
 

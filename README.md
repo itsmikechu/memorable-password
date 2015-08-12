@@ -18,6 +18,6 @@ Create a stronger memorable password.
 
 *  Teaching aid for Netizens.  
 
-    I've used Bruce Schneier's method to instruct a 6 and 60+ year old to create a stronger memorable password.
+    I've used Bruce Schneier's method to instruct a 6-60+ year olds to create a stronger memorable password.
 
 *  Have fun outside the  drudgery of Microsoft.

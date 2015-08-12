@@ -21,12 +21,12 @@ describe('the Create module', () => {
     sut = new Create();
   });
 
-  it('contains heading property', () => {
-    expect(sut.heading).toBeDefined();
+  it('contains subheading property', () => {
+    expect(sut.subheading).toBeDefined();
   });
 
-  it('\'s heading property is set correctly', () => {
-    expect(sut.heading).toEqual('Create a stronger, memorable password.');
+  it('\'s subheading property is set correctly', () => {
+    expect(sut.subheading).toEqual('Create a stronger, memorable password.');
   });
 
   it('contains a passphrase property', () => {
