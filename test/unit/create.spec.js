@@ -3,6 +3,20 @@ import {Create} from '../../src/create';
 describe('the Create module', () => {
   let sut;
 
+  let examplePassphrases = [
+    "My #1 favorite superhero is Green Lantern Hal Jordan.",
+    "Between 8-9 pm each night, I'll eat 1 chocolate chunk cookie.",
+    "How much wood would a woodchuck chuck if a woodchuck would chuck wood?",
+    "I don't wanna grow up. I'm a Toys R Us kid. There's a million toys at Toys R Us that I can play with."
+  ];
+
+  let expectedPasswords = [
+    "M#1fsiGLHJ.",
+    "B8-9pen,I'e1ccc.",
+    "Hmwwawciawwcw?",
+    "Id'wgu.I'aTRUk.T'amtaTRUtIcpw."
+  ];
+
   beforeEach(() => {
     sut = new Create();
   });
@@ -24,12 +38,17 @@ describe('the Create module', () => {
   });
 
   it('has a function to convert a passphrase to password', () => {
-    expect(sut.password).toBeDefined();
+    expect(sut.convertPassphraseToPassword).toBeDefined();
   });
 
-  it('produces a shorter password than passphrase', () => {
-    var passphraseLength = sut.passphrase.length;
-    var passwordLength = sut.password.length;
+  it('produces a shorter password than passphrase (estimates success)', () => {
+    let passphraseLength = sut.passphrase.length;
+    let passwordLength = sut.convertPassphraseToPassword.length;
     expect(passphraseLength).toBeGreaterThan(passwordLength);
+  });
+
+  it('produces correct passwords from passphrases', () => {
+    let resultantPasswords = examplePassphrases.map(sut.convertPassphraseToPassword);
+    expect(resultantPasswords).toEqual(expectedPasswords);
   });
 });
