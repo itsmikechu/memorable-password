@@ -9,12 +9,11 @@ Create a stronger memorable password.
     - [aurelia](http://aurelia.io/)
     - TDD
     - karma+jasmine
-    - yeoman
-    - git(hub)?
+    - [yeoman](http://yeoman.io/)
+    - [git](https://git-scm.com/)(hub)?
     - [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
     - markdown
     - vi
-
 
 *  Teaching aid for Netizens.  
 
