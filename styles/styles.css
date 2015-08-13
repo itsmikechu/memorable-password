@@ -14,9 +14,11 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  margin-top: 20px;
 }
-.logo-large {
-  background-image: url(../#logo);
+.logo {
+  width: 300px;
 }
 .subheading {
   font-size: 2em;
