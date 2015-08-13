@@ -11,6 +11,15 @@ export class Create {
     return this.convertPassphraseToPassword(this.passphrase);
   }
 
+  clearButtonClick() {
+    this.clearPassphrase();
+    window.passphrase.focus();
+  }
+
+  clearPassphrase() {
+    this.passphrase = '';
+  }
+
   convertPassphraseToPassword(phrase) {
     let passwordCharacters = [];
 

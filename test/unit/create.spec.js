@@ -25,7 +25,7 @@ describe('the Create module', () => {
     expect(sut.subheading).toBeDefined();
   });
 
-  it('\'s subheading property is set correctly', () => {
+  it('subheading property is set correctly', () => {
     expect(sut.subheading).toEqual('Create a stronger, memorable password.');
   });
 
@@ -55,7 +55,16 @@ describe('the Create module', () => {
   it('produces an expected password when calling the password getter', () => {
     sut.passphrase = examplePassphrases[0];
     let resultantPassword = sut.password;
-
     expect(resultantPassword).toEqual(expectedPasswords[0]);
   });
+
+  it('has a function called clearPassphrase', () => {
+    expect(sut.clearPassphrase).toBeDefined();
+  });
+
+  it('clearPassphrase function will set the passphrase property to empty string', () => {
+    sut.clearPassphrase();
+    expect(sut.passphrase.length).toEqual(0);
+  });
+
 });

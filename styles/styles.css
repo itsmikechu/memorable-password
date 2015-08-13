@@ -9,7 +9,7 @@ body {
   width: 100vw;
   font-family: monospace;
 }
-section {
+#create-password {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,6 +30,7 @@ section {
   padding: 2px;
   border: 1px solid black;
   font-size: 1.1em;
+  display: inline-block;
 }
 .text-output {
   font-size: 1.7em;
