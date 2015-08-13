@@ -35,3 +35,6 @@ body {
 .text-output {
   font-size: 1.7em;
 }
+a>i.fa-github {
+  color: #000;
+}
