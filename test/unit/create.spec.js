@@ -67,4 +67,8 @@ describe('the Create module', () => {
     expect(sut.passphrase.length).toEqual(0);
   });
 
+  it('should have a function to copy the currently generated password to the clipboard', ()=> {
+    expect(sut.copyPasswordToClipboard).toBeDefined
+  });
+
 });

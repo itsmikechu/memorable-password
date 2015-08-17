@@ -17,6 +17,41 @@ export class Create {
     this.passphrase = '';
   }
 
+  copyPasswordToClipboard() {
+    // focus the field
+    window.password.focus();
+
+    // get the range
+    var range = document.createRange();
+    range.selectNodeContents(window.password);
+
+    // get the selection
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+
+    // try to copy the selection
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Copying text command was ' + msg);
+    } catch (err) {
+      console.log('Oops, unable to copy');
+    }
+
+    if (msg !== 'successful') {
+      alert('Unable to copy to clipboard.');
+    }
+
+    // remove focus and selection
+    sel.removeAllRanges();
+    window.password.blur();
+  }
+
+  copyButtonClick() {
+    this.copyPasswordToClipboard();
+  }
+
   convertPassphraseToPassword(phrase) {
     let passwordCharacters = [];
 

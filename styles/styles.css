@@ -31,10 +31,16 @@ body {
   border: 1px solid black;
   font-size: 1.1em;
   display: inline-block;
+  vertical-align: middle;
+}
+i {
+  cursor: pointer;
 }
 .text-output {
   font-size: 1.7em;
+  display: inline-block;
 }
 a>i.fa-github {
   color: #000;
+  margin-top: 20px;
 }

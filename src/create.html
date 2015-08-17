@@ -4,15 +4,20 @@
 
     <img class="logo" src="img/logo.svg" />
     <h2 class="subheading">${subheading}</h2>
+
     <div>
       <div class="text-input" id="passphrase" contenteditable="true" textcontent.bind="passphrase"></div>
-      <i class="fa fa-times" click.trigger="clearButtonClick()"></i>
+      <i class="fa fa-times" click.trigger="clearButtonClick()" title="Clear Passphrase"></i>
     </div>
-    <p class="text-output"> ${password} </p>
-    <a href="https://github.com/sevhn/memorable-password">
-      <i class="fa fa-github fa-3x"></i>
-    </a>
 
+    <div>
+      <p id="password" contenteditable="true" class="text-output">${password}</p>
+      <i class="fa fa-copy" click.trigger="copyButtonClick()" title="Copy Password"></i>
+    </div>
+
+    <a href="https://github.com/sevhn/memorable-password">
+      <i class="fa fa-github fa-2x"></i>
+    </a>
 
   </section>
 
