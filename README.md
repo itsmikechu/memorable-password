@@ -1,5 +1,5 @@
-# memorable-password
-Create a stronger memorable password.
+# Memorable Password
+Create a stronger, memorable password.
 [Try it out](http://memorablepassword.com)
 
 #### Motivations
