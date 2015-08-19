@@ -18,6 +18,9 @@ export class Create {
   }
 
   copyPasswordToClipboard() {
+    // make contenteditable
+    window.password.setAttribute('contenteditable', 'true');
+
     // focus the field
     window.password.focus();
 
@@ -32,20 +35,15 @@ export class Create {
 
     // try to copy the selection
     try {
-      var successful = document.execCommand('copy');
-      var msg = successful ? 'successful' : 'unsuccessful';
-      console.log('Copying text command was ' + msg);
+      document.execCommand('copy');
     } catch (err) {
       console.log('Oops, unable to copy');
     }
 
-    if (msg !== 'successful') {
-      alert('Unable to copy to clipboard.');
-    }
-
-    // remove focus and selection
+    // remove focus, selection, and contenteditable
     sel.removeAllRanges();
     window.password.blur();
+    window.password.removeAttribute('contenteditable');
   }
 
   copyButtonClick() {
@@ -83,7 +81,7 @@ export class Create {
     }
 
     // "The password is...."
-    let password = passwordCharacters.join('');
+    let password = passwordCharacters.join('').trim();
     return password;
   }
 }
