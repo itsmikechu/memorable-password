@@ -34,11 +34,25 @@ export class Create {
     sel.addRange(range);
 
     // try to copy the selection
+    let copiedSuccessfully;
     try {
-      document.execCommand('copy');
+      copiedSuccessfully = document.execCommand('copy');
     } catch (err) {
       console.log('Oops, unable to copy');
     }
+
+    // confirm to UI it's done
+    let resultIconClass = 'fa-exclamation-triangle';
+    if (copiedSuccessfully) {
+      resultIconClass = 'fa-check';
+    }
+    window.copyButton.classList.remove('fa-copy');
+    window.copyButton.classList.add(resultIconClass);
+    window.setTimeout(function() {
+      window.copyButton.classList.remove('fa-exclamation-triangle');
+      window.copyButton.classList.remove('fa-check');
+      window.copyButton.classList.add('fa-copy');
+    }, 2000);
 
     // remove focus, selection, and contenteditable
     sel.removeAllRanges();
