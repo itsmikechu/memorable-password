@@ -8,7 +8,7 @@ Create a stronger, memorable password.
     - [Visual Studio Code](https://code.visualstudio.com/)
     - [React](https://facebook.github.io/react/)
     - Wes Bos's outstanding course [React For Beginners](https://reactforbeginners.com/) 
-    - [git](https://git-scm.com/)(hub)?
+    - [git](https://git-scm.com/)(hub)
     - [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
     - markdown
 
