@@ -3,7 +3,6 @@ import './Sentence.css'
 
 class Sentence extends Component {
     clearSentence = () => {
-        console.log("About to clear the sentence.");
         this.refs.sentenceInput.value = '';
     }
 
