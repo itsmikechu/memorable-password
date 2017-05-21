@@ -13,7 +13,10 @@ class Sentence extends Component {
     render() {
         return (
             <div className="Sentence">
-                <textarea defaultValue={this.props.initialSentence} ref="sentenceInput" rows="2"></textarea>
+                <textarea
+                    ref="sentenceInput" rows="2"
+                    defaultValue={this.props.initialSentence}
+                    onChange={this.props.computePassword}></textarea>
                 <i className="fa fa-times clear" onClick={this.clearSentence} title="Clear Passphrase"></i>
             </div>
         )
