@@ -7,7 +7,8 @@ class Header extends Component {
         return (
             <div className="Header">
                 <img src={logo} className="logo" alt="logo" />
-                <h2>Memorable Password</h2>
+                <h1>Memorable Password</h1>
+                <h3>Create a stronger, memorable password.</h3>
             </div>
         )
     }
