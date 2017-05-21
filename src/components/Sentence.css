@@ -5,3 +5,7 @@
 input {
   width: 90vw;
 }
+
+i.clear {
+  margin-left: 5px;
+}

@@ -3,14 +3,15 @@ import './Sentence.css'
 
 class Sentence extends Component {
     clearSentence = () => {
-        console.log("About to clear the sentence.")
+        console.log("About to clear the sentence.");
+        this.refs.sentenceInput.value = '';
     }
 
     render() {
         return (
             <div className="Sentence">
-                <input type="text" value={this.props.initialSentence} />
-                <i class="fa fa-times au-target" onClick={this.clearSentence} title="Clear Passphrase"></i>
+                <input type="text" defaultValue={this.props.initialSentence} ref="sentenceInput" />
+                <i className="fa fa-times clear" onClick={this.clearSentence} title="Clear Passphrase"></i>
             </div>
         )
     }
