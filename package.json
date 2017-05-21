@@ -1,7 +1,7 @@
 {
   "name": "memorable-password",
   "version": "0.2.0",
-  "private": true, 
+  "private": true,
   "homepage": "https://memorablepassword.com",
   "bugs": {
     "url": "https://github.com/sevhn/memorable-password/issues"
