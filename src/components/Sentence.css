@@ -2,8 +2,9 @@
   margin: 10px 0;
 }
 
-input {
-  width: 90vw;
+textarea {
+   width: 90vw;
+   vertical-align: middle;
 }
 
 i.clear {

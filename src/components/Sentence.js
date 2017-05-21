@@ -6,10 +6,14 @@ class Sentence extends Component {
         this.refs.sentenceInput.value = '';
     }
 
+    componentDidMount() {
+        this.refs.sentenceInput.focus();
+    }
+
     render() {
         return (
             <div className="Sentence">
-                <input type="text" defaultValue={this.props.initialSentence} ref="sentenceInput" />
+                <textarea defaultValue={this.props.initialSentence} ref="sentenceInput" rows="2"></textarea>
                 <i className="fa fa-times clear" onClick={this.clearSentence} title="Clear Passphrase"></i>
             </div>
         )
