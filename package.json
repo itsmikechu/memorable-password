@@ -1,7 +1,23 @@
 {
   "name": "memorable-password",
   "version": "0.2.0",
-  "private": true,
+  "private": true,"description": "Create stronger passwords that are memorable.",
+  "keywords": [
+    "password",
+    "generator",
+    "website",
+    "memorable"
+  ],
+  "homepage": "https://memorablepassword.com",
+  "bugs": {
+    "url": "https://github.com/sevhn/memorable-password/issues"
+  },
+  "license": "MIT",
+  "author": "Mike Chu <mike@chu.ms>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sevhn/memorable-password"
+  },
   "dependencies": {
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
