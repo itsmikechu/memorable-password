@@ -6,6 +6,11 @@ import Footer from './Footer';
 import './App.css';
 
 class App extends Component {
+
+  state = {
+    passwordResult: "Ctt,tt1-2mswpgap."
+  }
+
   computePassword = (event) => {
     const phrase = event.target.value;
 
@@ -37,8 +42,7 @@ class App extends Component {
         }
       }
     }
-    this.result = passwordCharacters.join('');
-    console.log(this.result);
+    this.setState( { passwordResult : passwordCharacters.join('') })
   }
 
   render() {
@@ -48,7 +52,7 @@ class App extends Component {
         <Sentence
           initialSentence="Clear this text, then type 1-2 memorable sentences with proper grammar and punctuation."
           computePassword={this.computePassword} />
-        <Password result={this.result} />
+        <Password passwordResult={this.state.passwordResult} />
         <Footer />
       </div>
     );
