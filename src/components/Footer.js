@@ -5,7 +5,7 @@ class Footer extends Component {
     render() {
         return (
             <div className="Footer">
-                <a href="https://github.com/sevhn/memorable-password" target="repo">
+                <a href="https://github.com/itsmikechu/memorable-password" target="repo">
                     <i className="fa fa-github fa-2x"></i>
                 </a>
             </div>
