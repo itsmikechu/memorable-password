@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './Sentence.css'
 
 class Sentence extends Component {
-    clearSentence = () => {
+    clearSentence = (event) => {
         this.sentence.value = '';
+        this.props.computePassword(this.sentence);
     }
 
     componentDidMount() {
@@ -16,7 +17,7 @@ class Sentence extends Component {
                 <textarea
                     ref={(input) => this.sentence = input} rows="2"
                     defaultValue={this.props.initialSentence}
-                    onChange={this.props.computePassword}>
+                    onChange={(event) => this.props.computePassword(event.target.value)}>
                 </textarea>
                 <i className="fa fa-times clear" onClick={this.clearSentence} title="Clear Passphrase"></i>
             </div>

@@ -11,12 +11,10 @@ class App extends Component {
     passwordResult: "Ctt,tt1-2mswpgap."
   }
 
-  computePassword = (event) => {
-    const phrase = event.target.value;
-
+  computePassword = (phrase) => {
     let passwordCharacters = [];
 
-    if (phrase) {
+    if (phrase.length) {
       // split each word
       let wordArray = phrase.split(' ');
       let nonAlphaRegex = /[^A-Za-z]/i;
