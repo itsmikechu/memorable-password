@@ -15,7 +15,15 @@ it('has correct initial password', () => {
   expect(new App().state.password).toEqual('Ctt,tt1-2mswpgap.');
 });
 
-it('computes the correct password from passphrase', () => { 
+it('computes the correct initial password from initial passphrase', () => { 
   const app = new App();
   expect(app.computePassword(app.state.passphrase)).toEqual(app.state.password);
+});
+
+it('computes passwords off multi-word hyphenated phrases', () => {
+  expect(new App().computePassword('up-to-dae')).toEqual('u-t-d');
+});
+
+it('computes passwords within quotations', ()=> {
+  expect(new App().computePassword('He said, "Why can I not go to the concert?"')).toEqual('Hs,"WcIngttc?"');
 });
