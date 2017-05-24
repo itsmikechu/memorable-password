@@ -11,13 +11,13 @@ script:
   - npm run build
 deploy:
   provider: script
+  edge: true
   script: gulp deploy --user $DEV_FTP_USER --password $DEV_FTP_PASSWORD  # environment variables stored at travis-ci.org
   on:
     branch: development
 deploy:
   provider: script
+  edge: true
   script: gulp deploy --user $PROD_FTP_USER --password $PROD_FTP_PASSWORD # environment variables stored at travis-ci.org
   on:
     branch: master 
-# after_success:
-#   gulp deploy --user $DEV_FTP_USER --password $DEV_FTP_PASSWORD # environment variables stored at travis-ci.org
