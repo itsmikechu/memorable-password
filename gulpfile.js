@@ -1,7 +1,7 @@
-import ftp from 'vinyl-ftp';
-import gutil from 'gulp-util';
-import minimist from 'minimist';
-
+const gulp = require('gulp');
+const ftp = require('vinyl-ftp');
+const gutil = require('gulp-util');
+const minimist = require('minimist');
 const args = minimist(process.argv.slice(2));
 
 gulp.task('deploy', () => {
@@ -12,7 +12,7 @@ gulp.task('deploy', () => {
         password: args.password,
         log: gutil.log
     });
-    gulp.src(['./build/**/*'], { base: '.', buffer: false })
+    gulp.src(['./build/**/*'], { base: './build/', buffer: false })
         .pipe(connection.newer(remotePath))
         .pipe(connection.dest(remotePath));
 });
