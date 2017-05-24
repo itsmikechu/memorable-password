@@ -4,19 +4,20 @@ node_js:
 cache:
   directories:
     - node_modules
+before_script: 
+  - npm install --global gulp
 script:
   - npm test
   - npm run build
-after_success:
-  gulp deploy --user $DEV_FTP_USER --password $DEV_FTP_PASSWORD # environment variables stored at travis-ci.org
-
-# deploy:
-#   provider: script
-#   script: gulp deploy --user $DEV_FTP_USER --password $DEV_FTP_PASSWORD  # environment variables stored at travis-ci.org
-#   on:
-#     branch: development
-# deploy:
-#   provider: script
-#   script: gulp deploy --user $PROD_FTP_USER --password $PROD_FTP_PASSWORD # environment variables stored at travis-ci.org
-#   on:
-#     branch: master 
+deploy:
+  provider: script
+  script: gulp deploy --user $DEV_FTP_USER --password $DEV_FTP_PASSWORD  # environment variables stored at travis-ci.org
+  on:
+    branch: development
+deploy:
+  provider: script
+  script: gulp deploy --user $PROD_FTP_USER --password $PROD_FTP_PASSWORD # environment variables stored at travis-ci.org
+  on:
+    branch: master 
+# after_success:
+#   gulp deploy --user $DEV_FTP_USER --password $DEV_FTP_PASSWORD # environment variables stored at travis-ci.org
