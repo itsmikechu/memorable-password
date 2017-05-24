@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import Sentence from './Sentence';
+import Passphrase from './Passphrase';
 import Password from './Password';
 import Footer from './Footer';
 import './App.css';
@@ -8,15 +8,16 @@ import './App.css';
 class App extends Component {
 
   state = {
-    passwordResult: "Ctt,tt1-2mswpgap."
+    passphrase: "Clear this text, then type 1-2 memorable Passpassphrases with proper grammar and punctuation.",
+    password: "Ctt,tt1-2mswpgap.",
   }
 
-  computePassword = (phrase) => {
+  computePassword = (passphrase) => {
     let passwordCharacters = [];
 
-    if (phrase.length) {
+    if (passphrase.length) {
       // split each word
-      let wordArray = phrase.split(' ');
+      let wordArray = passphrase.split(' ');
       let nonAlphaRegex = /[^A-Za-z]/i;
       for (let word of wordArray) {
         // see if there are non-alpha chars in the current word
@@ -40,17 +41,17 @@ class App extends Component {
         }
       }
     }
-    this.setState( { passwordResult : passwordCharacters.join('') })
+    this.setState( { password : passwordCharacters.join('') })
   }
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Sentence
-          initialSentence="Clear this text, then type 1-2 memorable sentences with proper grammar and punctuation."
-          computePassword={this.computePassword} />
-        <Password passwordResult={this.state.passwordResult} />
+        <Passphrase
+          initialPassphrase = {this.state.passphrase}
+          computePassword = {this.computePassword} />
+        <Password initialPassword = {this.state.password} />
         <Footer />
       </div>
     );
