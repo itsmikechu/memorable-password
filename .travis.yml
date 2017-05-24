@@ -11,12 +11,12 @@ script:
   - npm run build
 deploy:
   provider: script
-  script: scripts/deploy.sh $DEV_FTP_USER $DEV_FTP_PASSWORD  # environment variables stored at travis-ci.org
-  on:
-    branch: development
-deploy:
-  provider: script
   edge: true
-  script: scripts/deploy.sh $PROD_FTP_USER $PROD_FTP_PASSWORD # environment variables stored at travis-ci.org
+  script: gulp deploy --user $PROD_FTP_USER --password $PROD_FTP_PASSWORD # environment variables stored at travis-ci.org
   on:
     branch: master 
+deploy:
+  provider: script
+  script: gulp deploy --user $DEV_FTP_USER --password $DEV_FTP_PASSWORD  # environment variables stored at travis-ci.org
+  on:
+    all_branches: true
