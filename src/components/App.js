@@ -13,17 +13,14 @@ class App extends Component {
   }
 
   computePassword = (passphrase) => {
-    let passwordCharacters = [];
+    const passwordCharacters = [];
 
     if (passphrase.length) {
+      const nonAlphaRegex = /[^A-Za-z]/i;
       // split each word
-      let wordArray = passphrase.split(' ');
-      let nonAlphaRegex = /[^A-Za-z]/i;
-      for (let word of wordArray) {
-        // see if there are non-alpha chars in the current word
-        const nonAlphaMatches = word.match(nonAlphaRegex);
+      for (let word of passphrase.split(' ')) {
         // if there are non-alpha characters within this word
-        if (nonAlphaMatches) {
+        if (word.match(nonAlphaRegex)) {
           // split the word up into characters
           const wordCharacters = word.split('');
           // push the first char regardless of type
@@ -31,9 +28,9 @@ class App extends Component {
           // shift all the elements to the left to remove the first char
           wordCharacters.shift();
           // extract the remaining non-alpha chars from the array
-          for (let blah of wordCharacters) {
-            if (nonAlphaRegex.test(blah)) {
-              passwordCharacters.push(blah);
+          for (let character of wordCharacters) {
+            if (nonAlphaRegex.test(character)) {
+              passwordCharacters.push(character);
             }
           }
         } else {
