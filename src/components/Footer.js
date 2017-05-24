@@ -7,8 +7,8 @@ class Footer extends Component {
             <div className="Footer">
                 <a href="https://github.com/itsmikechu/memorable-password" target="repo">
                     <i className="fa fa-github fa-2x"></i>
-                </a>
-            </div>
+                </a> -mchu
+            </div> 
         )
     }
 }
