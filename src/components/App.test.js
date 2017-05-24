@@ -20,8 +20,8 @@ it('computes the correct initial password from initial passphrase', () => {
   expect(app.computePassword(app.state.passphrase)).toEqual(app.state.password);
 });
 
-it('computes passwords off multi-word hyphenated phrases', () => {
-  expect(new App().computePassword('up-to-dae')).toEqual('u-t-d');
+it('computes passwords off multi-word-hyphenated phrases', () => {
+  expect(new App().computePassword('up-to-date')).toEqual('u-t-d');
 });
 
 it('computes passwords within quotations', ()=> {
