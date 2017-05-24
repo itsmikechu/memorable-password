@@ -16,7 +16,10 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "react-scripts": "1.0.2"
+    "gulp-util": "^3.0.8",
+    "minimist": "^1.2.0",
+    "react-scripts": "1.0.2",
+    "vinyl-ftp": "^0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
