@@ -9,11 +9,7 @@ before_script:
 script:
   - npm test
   - npm run build
-after_success: 
-  if [ "$TRAVIS_BRANCH" == "master" ]; then 
-    gulp deploy --user $PROD_FTP_USER --password $PROD_FTP_PASSWORD # environment variables stored at travis-ci.org
-  elif [ "$TRAVIS_BRANCH" == "development" ] then
-    gulp deploy --user $DEV_FTP_USER --password $DEV_FTP_PASSWORD  # environment variables stored at travis-ci.org
-  else
-    echo "No deployment to execute"
-  fi
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then gulp deploy --user $PROD_FTP_USER --password $PROD_FTP_PASSWORD; fi # environment variables stored at travis-ci.org
+  - if [ "$TRAVIS_BRANCH" == "development" ]; then gulp deploy --user $DEV_FTP_USER --password $DEV_FTP_PASSWORD; fi # environment variables stored at travis-ci.org
+
