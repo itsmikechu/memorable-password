@@ -8,7 +8,7 @@ import './App.css';
 class App extends Component {
 
   state = {
-    passphrase: "Clear this text, then type 1-2 memorable Passpassphrases with proper grammar and punctuation.",
+    passphrase: "Clear this text, then type 1-2 memorable sentences with proper grammar and punctuation.",
     password: "Ctt,tt1-2mswpgap.",
   }
 
@@ -41,7 +41,13 @@ class App extends Component {
         }
       }
     }
-    this.setState( { password : passwordCharacters.join('') })
+    return passwordCharacters.join('');
+  }
+
+  updateComputedPassword = (passphrase) => {
+    this.setState({
+      password: this.computePassword(passphrase)
+    });
   }
 
   render() {
@@ -49,9 +55,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <Passphrase
-          initialPassphrase = {this.state.passphrase}
-          computePassword = {this.computePassword} />
-        <Password initialPassword = {this.state.password} />
+          initialPassphrase={this.state.passphrase}
+          updateComputedPassword={this.updateComputedPassword} />
+        <Password initialPassword={this.state.password} />
         <Footer />
       </div>
     );

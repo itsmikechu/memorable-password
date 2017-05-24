@@ -17,7 +17,7 @@ class Passphrase extends Component {
                 <textarea
                     ref={(input) => this.passphraseInput = input} rows="2"
                     defaultValue={this.props.initialPassphrase}
-                    onChange={(event) => this.props.computePassword(event.target.value)}>
+                    onChange={(event) => this.props.updateComputedPassword(event.target.value)}>
                 </textarea>
                 <i className="fa fa-times clear" onClick={this.clearPassphrase} title="Clear Passphrase"></i>
             </div>
