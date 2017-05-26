@@ -16,7 +16,6 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-    "gulp-util": "^3.0.8",
     "minimist": "^1.2.0",
     "react-scripts": "1.0.2"
   },
