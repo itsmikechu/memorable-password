@@ -25,6 +25,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "test:once": "cross-env CI=true npm run test -i",
-    "deploy": "npm run test && npm run build"
+    "deploy": "npm run test:once && npm run build"
   }
 }
