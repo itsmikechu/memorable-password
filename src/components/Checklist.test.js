@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Checklist from './Checklist';
 
 const cl = new Checklist();
+const expectedMinimumOccurrence = 2;
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -47,6 +48,38 @@ it('handles empty passwords ok', () => {
   expect(cl.countUppercase('')).toBe(0);
   expect(cl.countNumbers('')).toBe(0);
   expect(cl.countSpecialCharacters('')).toBe(0);
+});
+
+it('determines uppercase satisfies correctly', () => {
+  const positiveCase = 'TvDR$6*kLjZ@1';
+  const negativeCase = 'jfd3f$9%@fek3vbn';
+
+  expect(cl.satisfiesUppercase(positiveCase, expectedMinimumOccurrence)).toBe(true);
+  expect(cl.satisfiesUppercase(negativeCase, expectedMinimumOccurrence)).toBe(false);
+});
+
+it('determines lowercase satisfies correctly', () => {
+  const positiveCase = '94^dc2#$V-KCkw]I';
+  const negativeCase = 'ERVP$9%@MZ2';
+
+  expect(cl.satisfiesLowercase(positiveCase, expectedMinimumOccurrence)).toBe(true);
+  expect(cl.satisfiesLowercase(negativeCase, expectedMinimumOccurrence)).toBe(false);
+});
+
+it('determines numbers satisfies correctly', () => {
+  const positiveCase = 'Ui@-VKl9CK5VK%8=*';
+  const negativeCase = 'dfkP)$K#CLzQ';
+
+  expect(cl.satisfiesNumbers(positiveCase, expectedMinimumOccurrence)).toBe(true);
+  expect(cl.satisfiesNumbers(negativeCase, expectedMinimumOccurrence)).toBe(false);
+});
+
+it('determines special characters satisfies correctly', () => {  
+  const positiveCase = 'IV(2FV%sd$0';
+  const negativeCase = 'PO3vZq935F74DKdq';
+
+  expect(cl.satisfiesSpecialCharacters(positiveCase, expectedMinimumOccurrence)).toBe(true);
+  expect(cl.satisfiesSpecialCharacters(negativeCase, expectedMinimumOccurrence)).toBe(false);
 });
 
 it('determines that computed password length >= 8', () => {

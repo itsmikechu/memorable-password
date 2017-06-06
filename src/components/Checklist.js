@@ -28,7 +28,23 @@ class Checklist extends Component {
     satisfiesMinimumLength = (value, minimumLength) => {
         return (value === null ? false : value.length >= minimumLength);
     }
-    
+
+    satisfiesUppercase = (value, minimumLength) => {
+        return this.countUppercase(value) >= minimumLength;
+    }
+
+    satisfiesLowercase = (value, minimumLength) => {
+        return this.countLowercase(value) >= minimumLength;
+    }
+
+    satisfiesNumbers = (value, minimumLength) => {
+        return this.countNumbers(value) >= minimumLength;
+    }
+
+    satisfiesSpecialCharacters = (value, minimumLength) => {
+        return this.countSpecialCharacters(value) >= minimumLength;
+    }
+
     render() {
         return (
             <ul className="Checklist">
