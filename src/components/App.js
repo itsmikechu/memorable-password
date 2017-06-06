@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Passphrase from './Passphrase';
 import Password from './Password';
+import Checklist from './Checklist';
 import Footer from './Footer';
 import './App.css';
 
@@ -37,6 +38,7 @@ class App extends Component {
           initialPassphrase={this.state.passphrase}
           updateComputedPassword={this.updateComputedPassword} />
         <Password initialPassword={this.state.password} />
+        <Checklist/>
         <Footer />
       </div>
     );
