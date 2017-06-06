@@ -7,6 +7,6 @@ li {
    text-align: left;
 }
 
-li>i {
+li > i {
     margin-right: 5px;
 }
