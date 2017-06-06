@@ -1,0 +1,12 @@
+.Checklist {
+    display: inline-block;
+}
+
+li {
+   list-style: none; 
+   text-align: left;
+}
+
+li>i {
+    margin-right: 5px;
+}
