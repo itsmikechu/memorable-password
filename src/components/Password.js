@@ -48,7 +48,7 @@ class Password extends Component {
     render() {
         return (
             <div className="Password">
-                <h3 ref={(h3) => { this.passwordResult = h3; }}>{this.props.initialPassword}</h3>
+                <h3 ref={(h3) => { this.passwordResult = h3; }}>{this.props.password}</h3>
                 <i ref={(i) => { this.copyButton = i; }} className="fa fa-copy copyButton" onClick={this.copyPassword} title="Copy Password" ></i>
             </div>
         )

@@ -37,7 +37,7 @@ class App extends Component {
         <Passphrase
           initialPassphrase={this.state.passphrase}
           updateComputedPassword={this.updateComputedPassword} />
-        <Password initialPassword={this.state.password} />
+        <Password password={this.state.password} />
         <Checklist/>
         <Footer />
       </div>
