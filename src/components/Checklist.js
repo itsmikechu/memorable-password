@@ -3,7 +3,7 @@ import './Checklist.css'
 
 class Checklist extends Component {
     minimumCharacterLengthPerCategory = 2;
-    minimumTotalLength = 8;
+    minimumTotalLength = 10; // https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Password_Length
 
     runRegexToGetLength = (value, regex) => {
         if (typeof value === 'undefined' || value === null || value.match(regex) === null) {
@@ -69,7 +69,10 @@ class Checklist extends Component {
                 </li>
                 <li className="category">
                     <i className={this.satisfiesMinimumLength(this.props.password, this.minimumTotalLength) ? "fa fa-check" : "fa fa-times"}></i>
-                    <span>{this.props.password.length} Total character(s)</span>
+                    <span>
+                        {this.props.password.length} Total character(s)
+                        [<a target="owasp" href="https://www.owasp.org/index.php/Authentication_Cheat_Sheet#Password_Length">OWASP guidance</a>]
+                    </span>
                 </li>
             </ul>
         )
