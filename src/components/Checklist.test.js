@@ -42,12 +42,18 @@ it('finds specia! ch@racters', () => {
   expect(cl.countSpecialCharacters(negativeCase)).toBe(0);
 });
 
-
 it('handles empty passwords ok', () => {
   expect(cl.countLowercase('')).toBe(0);
   expect(cl.countUppercase('')).toBe(0);
   expect(cl.countNumbers('')).toBe(0);
   expect(cl.countSpecialCharacters('')).toBe(0);
+});
+
+it('handles undefined as the password', () => {
+  expect(cl.countLowercase(undefined)).toBe(0);
+  expect(cl.countUppercase(undefined)).toBe(0);
+  expect(cl.countNumbers(undefined)).toBe(0);
+  expect(cl.countSpecialCharacters(undefined)).toBe(0);
 });
 
 it('determines uppercase satisfies correctly', () => {

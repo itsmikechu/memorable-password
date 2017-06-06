@@ -15,10 +15,10 @@ class App extends Component {
 
   computePassword = (passphrase) => {
     if (passphrase.length) {
-     return passphrase
+      return passphrase
         .match(/^.|([\s-."',?])+.|\W$/ig)
         .reduce((accumulator, currentValue, currentIndex, array) => {
-          return accumulator + currentValue.replace(' ','');
+          return accumulator + currentValue.replace(' ', '');
         });
     }
     return '';
@@ -38,7 +38,7 @@ class App extends Component {
           initialPassphrase={this.state.passphrase}
           updateComputedPassword={this.updateComputedPassword} />
         <Password password={this.state.password} />
-        <Checklist/>
+        <Checklist password={this.state.password} />
         <Footer />
       </div>
     );

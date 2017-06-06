@@ -3,7 +3,7 @@ import './Checklist.css'
 
 class Checklist extends Component {
     runRegexToGetLength = (value, regex) => {
-        if (value === null || value.match(regex) === null) {
+        if (typeof value === 'undefined' || value === null || value.match(regex) === null) {
             return 0;
         }
         return value.match(regex).length;
@@ -48,7 +48,26 @@ class Checklist extends Component {
     render() {
         return (
             <ul className="Checklist">
-                <li>Test</li>
+                <li>
+                    <i className={this.satisfiesUppercase(this.props.password, 2) ? "fa fa-check" : "fa fa-times"}></i>
+                    <span>{this.countUppercase(this.props.password)} Uppercase character(s)</span>
+                </li>
+                <li>
+                    <i className={this.satisfiesLowercase(this.props.password, 2) ? "fa fa-check" : "fa fa-times"}></i>
+                    <span>{this.countLowercase(this.props.password)} Lowercase character(s)</span>
+                </li>
+                <li>
+                    <i className={this.satisfiesNumbers(this.props.password, 2) ? "fa fa-check" : "fa fa-times"}></i>
+                    <span>{this.countNumbers(this.props.password)} Number(s) used</span>
+                </li>
+                <li>
+                    <i className={this.satisfiesSpecialCharacters(this.props.password, 2) ? "fa fa-check" : "fa fa-times"}></i>
+                    <span>{this.countSpecialCharacters(this.props.password)} Special character(s)</span>
+                </li>
+                <li>
+                    <i className={this.satisfiesMinimumLength(this.props.password, 2) ? "fa fa-check" : "fa fa-times"}></i>
+                    <span>{this.props.password.length} Total character(s)</span>
+                </li>
             </ul>
         )
     }
