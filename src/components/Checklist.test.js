@@ -5,9 +5,9 @@ import Checklist from './Checklist';
 const cl = new Checklist();
 const expectedMinimumOccurrence = 2;
 
-it('renders without crashing', () => {
+it('renders Checklist component without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Checklist />, div);
+  ReactDOM.render(<Checklist password="Sfke94#%sdf" />, div);
 });
 
 it('finds lowercase characters', () => {
