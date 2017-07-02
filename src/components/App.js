@@ -16,7 +16,7 @@ class App extends Component {
   computePassword = (passphrase) => {
     if (passphrase.length) {
       return passphrase
-        .match(/^.|([\s-."',?])+.|\W$/ig)
+        .match(/^.|[0-9]+|([\s-."',?])+.|\W$/ig)
         .reduce((accumulator, currentValue, currentIndex, array) => {
           return accumulator + currentValue.replace(' ', '');
         });
