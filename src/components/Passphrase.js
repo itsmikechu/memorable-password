@@ -4,7 +4,7 @@ import './Passphrase.css'
 class Passphrase extends Component {
     clearPassphrase = (event) => {
         this.passphraseInput.value = '';
-        this.props.computePassword(this.passphraseInput.value);
+        this.props.updateComputedPassword(this.passphraseInput.value);
     }
 
     componentDidMount() {
