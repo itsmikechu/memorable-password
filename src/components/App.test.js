@@ -28,6 +28,15 @@ it('computes passwords within quotations', ()=> {
   expect(new App().computePassword('He said, "Why can I not go to the concert?"')).toEqual('Hs,"WcIngttc?"');
 });
 
-it ('computes passwords with numbers >= 10', () => {
-  expect(new App().computePassword("I will live to be 98 years old.")).toEqual("Iwltb98yo.")
+it('computes passwords with numbers >= 10', () => {
+  expect(new App().computePassword("I will live to be 98 years old.")).toEqual("Iwltb98yo.");
 });
+
+it('computes an empty password when input is empty', ()=> {
+  expect(new App().computePassword('')).toEqual('');
+});
+
+it('computes an empty password when only a space is provided', ()=> {
+  expect(new App().computePassword(' ')).toEqual('');
+});
+
