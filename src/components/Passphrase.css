@@ -3,8 +3,9 @@
 }
 
 textarea {
-   width: 90vw;
+   width: 90%;
    vertical-align: middle;
+   resize: none;
 }
 
 i.clear {

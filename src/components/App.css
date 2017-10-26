@@ -1,11 +1,36 @@
-.App {
-  text-align: center;
+body {
+    background: url(/images/background-1920.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    height: 100vh;
 }
 
-body { 
-  background: url(/images/background-1920.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} 
+#root {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.App {
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    width: 70%;
+    min-width: 600px;
+    padding: 50px;
+}
+
+.App a {
+    color: #aaa;
+}
