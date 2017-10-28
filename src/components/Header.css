@@ -1,12 +1,7 @@
-.Header {
-  margin-top: 10px;
-}
-
-.logo {
-  height: 100px;
-}
-
 h1, h3 {
   margin: 0;
 }
 
+h1 {
+  font-size: 40px;
+}
