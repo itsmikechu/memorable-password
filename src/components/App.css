@@ -20,13 +20,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100vw;
 }
 
 .App {
     text-align: center;
     color: #fff;
     background: rgba(0, 0, 0, 0.7);
-    width: 70%;
     min-width: 600px;
     padding: 50px;
 }
